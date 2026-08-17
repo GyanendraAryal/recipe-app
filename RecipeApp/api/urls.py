@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import *
 
-
-urlpatterns = [path("recipe/", recipe_list)]
+urlpatterns = [
+path("recipe/", recipe_list),
+path("user/", users_list)
+]
