@@ -8,7 +8,9 @@ from .serializers import *
 # Create your views here.
 @api_view(["GET"])
 def recipe_list(request):
-    return Response("I'm from django")
+    recipe = Recipe.objects.all()
+    serializers = RecipeSerializer(recipe, many=True)
+    return Response(serializers.data)
 
 
 @api_view(["GET"])
